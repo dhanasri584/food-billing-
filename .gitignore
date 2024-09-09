@@ -1,32 +1,126 @@
-# Prerequisites
-*.d
+#include <iostream>
+using namespace std;
+int main()
+{
+    int returnvalue(void);
+    int totalbill=returnvalue();
+    cout<<"hence ur total value is"<<totalbill<<endl;
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+    return 0;
+}
+int returnvalue(){
+    
+    char c;
+    char item;
+    int veg;
+    int amount=0;
+    char select;
+    m:
+    cout<<"------welcome to online food order--------\n";
+    cout<<"-----pls follow the below instructions-------\n";
+    cout<<"1).press s/S to start ur order\n";
+    cout<<"2)u can order bothe veg and non veg\n";
+    cout<<"press a to select veg item\n";
+    cout<<"press b to select non veg item\n";
+    cout<<"u will get ur final bill after ur order\n";
+    cin>>c;
+    if(c=='s'||c=='S'){
+        cout<<"pls select your choice"<<endl;
+        cout<<"a)veg    b)non-veg"<<endl;
+        cin>>item;
+        if(item=='a' || item=='A'){
+            vegitemlist:
+          
+            cout<<"1)paneer butter masala -rs-400"<<endl;
+            cout<<"2)franky -rs-50"<<endl;
+            cout<<"3)pav bhajhi -rs-120"<<endl;
+            cout<<"4)chat -rs-40"<<endl;
+            cout<<"5)pani puri(6 puri)-rs30"<<endl;
+            cin>>veg;
+            if(veg==1){
+                amount+=400;
+                
+            }
+            else if(veg==2){
+              amount+=50;
+            }
+            else if(veg==3){
+              amount+=120;
+            }
+            else if(veg==4){
+              amount+=40;
+            }
+            else if(veg==5){
+              amount+=30;
+            }
+            else{
+                cout<<"selected wrong number select from given menu";
+                goto vegitemlist;
+            }
+        cout<<"do u want to add more items?type y/n"<<endl;
+        cin>>select;
+        if(select=='y'){
+            goto m;
+        }
+        else{
+            return amount;
+        }
+        
+            
+        }
+        
+        
+        
+    }
+    else if(item=='b' || item=='B') {
+      
+        char c;
+        char item;
+        int nveg;
+        int amount=0;
+        char select;
+         
+            nvegitemlist:
+            cout<<"1)chicken butter masala -rs-400"<<endl;
+            cout<<"2)prawns biryani -rs-50"<<endl;
+            cout<<"3)kfc chicken -rs-120"<<endl;
+            cout<<"4)chicken shawarma-rs-40"<<endl;
+            cout<<"5)pamphret fish -rs30"<<endl;
+            cin>>nveg;
+            if(nveg==1){
+                amount+=400;
+                
+            }
+            else if(nveg==2){
+              amount+=50;
+            }
+            else if(nveg==3){
+              amount+=120;
+            }
+            else if(nveg==4){
+              amount+=40;
+            }
+            else if(nveg==5){
+              amount+=30;
+            }
+    
+    }
+    }
+            else{
+                cout<<"selected wrong number select from given menu";
+                goto m;
+            }
+        cout<<"do u want to add more items?type y/n"<<endl;
+        cin>>select;
+        if(select=='y'){
+            goto m;
+        }
+        else{
+            return amount;
+        }
+        
+            
+        }
+       
+    
+}
